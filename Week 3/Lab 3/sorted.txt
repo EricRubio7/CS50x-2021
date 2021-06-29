@@ -1,0 +1,13 @@
+Exercise: Identify what type of sorting method does each of the sort files use
+
+sort1 uses: Bubble Sort
+
+How do you know?: Runs O(n) in sorted case and at O(n^2) in unsorted case
+
+sort2 uses: Merge Sort
+
+How do you know?: Runs at O(n*logn) in both sorted and unsorted cases
+
+sort3 uses: Selection Sort
+
+How do you know?: Runs at O(n^2) for both sorted and unsorted cases
