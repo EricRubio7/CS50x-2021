@@ -2,8 +2,6 @@
 #include <stdio.h>
 #include <string.h>
 
-//Problem Set 3 - Plurality
-
 // Max number of candidates
 #define MAX 9
 
@@ -84,11 +82,14 @@ bool vote(string name)
 void print_winner(void)
 {
     // TODO
-
+    
     //Implement bubble sort
+    int swap_counter = -1; 
     candidate tmp_candidate;
-    for (int i = 0; i < candidate_count; i++)
+    int i = 0;
+    while (swap_counter != 0)
     {
+        swap_counter = 0;
         for (int j = 0; j < candidate_count - i - 1; j++)
         {
             if (candidates[j].votes < candidates[j + 1].votes)
@@ -96,16 +97,18 @@ void print_winner(void)
                 tmp_candidate = candidates[j + 1];
                 candidates[j + 1] = candidates[j];
                 candidates[j] = tmp_candidate;
+                swap_counter++;
             }
         }
+        i++;
     }
 
     //Print winners
-    for (int i = 0; i < candidate_count; i++)
+    for (int k = 0; k < candidate_count; k++)
     {
-        if (candidates[i].votes == candidates[0].votes) //Check for ties
+        if (candidates[k].votes == candidates[0].votes) //Check for ties
         {
-            printf("%s\n", candidates[i].name);
+            printf("%s\n", candidates[k].name);
         }
     }
     return;
